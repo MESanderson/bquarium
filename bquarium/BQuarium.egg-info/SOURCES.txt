@@ -1,8 +1,0 @@
-README.md
-bquarium/bquarium.py
-bquarium/BQuarium.egg-info/PKG-INFO
-bquarium/BQuarium.egg-info/SOURCES.txt
-bquarium/BQuarium.egg-info/dependency_links.txt
-bquarium/BQuarium.egg-info/entry_points.txt
-bquarium/BQuarium.egg-info/requires.txt
-bquarium/BQuarium.egg-info/top_level.txt
