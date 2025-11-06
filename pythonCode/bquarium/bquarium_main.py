@@ -8,6 +8,7 @@ import math
 from random import *
 import pkgutil
 import time
+from importlib.resources import files
 
 print('Setting Constants')
 # Constants
@@ -25,8 +26,7 @@ hiveList = None
 flowerList = None
 
 print('Creating Classes')
-ROOT_PATH = os.path.dirname(__file__)
-
+ROOT_PATH = files("images")
 
 class Hive:
     def __init__(self):
@@ -34,7 +34,7 @@ class Hive:
         self.y = math.trunc(screenHeight / 2)
         self.foodStore = 20
         self.beeList = []
-        img_path = os.path.join(ROOT_PATH, 'images', 'hive.png')
+        img_path = os.path.join(ROOT_PATH, 'hive.png')
         self.image = pygame.transform.scale2x(pygame.image.load(img_path).convert_alpha())
         self.imagerect = self.image.get_rect()
         self.imagerect.centerx, self.imagerect.centery = self.x, self.y
@@ -56,7 +56,7 @@ class Flower:
         self.colorcycle = self.foodStore * 10
         self.colorCounter = 0
         self.color = red
-        img_path = os.path.join(ROOT_PATH, 'images', 'flower.png')
+        img_path = os.path.join(ROOT_PATH, 'flower.png')
         self.image = pygame.image.load(img_path).convert_alpha()
         self.imagerect = self.image.get_rect()
         self.imagerect.centerx, self.imagerect.centery = self.x, self.y
@@ -116,7 +116,7 @@ class Bee:
         # Starting Position
         self.x = float(randint(-30, 30) + hive.x)
         self.y = float(randint(-30, 30) + hive.y)
-        img_path = os.path.join(ROOT_PATH, 'images', 'bee.png')
+        img_path = os.path.join(ROOT_PATH, 'bee.png')
         self.image = pygame.image.load(img_path).convert_alpha()
         self.imagerect = self.image.get_rect()
         self.imagerect.centerx, self.imagerect.centery = self.x, self.y
@@ -265,7 +265,7 @@ class Bee:
             self.wander()
 
         else:
-            img_path = os.path.join(ROOT_PATH, 'images', 'beewFood.png')
+            img_path = os.path.join(ROOT_PATH, 'beewFood.png')
             self.image = pygame.image.load(img_path).convert_alpha()
             self.imagerect = self.image.get_rect()
             self.imagerect.centerx, self.imagerect.centery = self.x, self.y
@@ -286,7 +286,7 @@ class Bee:
             self.target = []
             self.wander()
             return
-        img_path = os.path.join(ROOT_PATH, 'images', 'bee.png')
+        img_path = os.path.join(ROOT_PATH, 'bee.png')
         self.image = pygame.image.load(img_path).convert_alpha()
         self.imagerect = self.image.get_rect()
         self.imagerect.centerx, self.imagerect.centery = self.x, self.y
@@ -325,7 +325,7 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode(screenSize)
     pygame.display.set_caption('BEEZ!')
-    img_path = os.path.join(ROOT_PATH, 'images', 'field.png')
+    img_path = os.path.join(ROOT_PATH, 'field.png')
     background = pygame.image.load(img_path).convert_alpha()
 
     hiveList = []

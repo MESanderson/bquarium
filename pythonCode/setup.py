@@ -10,12 +10,13 @@ setup(
     author="Mike Sanderson",
     description="A calming Bee Aquarium",
     package_data={
-		'': ['*.png', '*.ico']
+		'images': ['*.png', '*.ico']
     },
-    scripts=['bquarium/bquarium.py'],
+    include_package_data=True,
+    scripts=['bquarium/bquarium_main.py'],
     entry_points={
 		'console_scripts':[
-			'bquarium = bquarium:main'
+			'bquarium = bquarium_main:main'
 		]
     }
 )
