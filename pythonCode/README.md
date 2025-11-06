@@ -4,6 +4,7 @@
 after installing it as a package and having the environment activated, run the program with `bquarium` in the command line
 
 
+
 ## Running the bquarium
 You can press 'b' on your keyboard to spawn a new bee.
 You can press 'f' on your keyboard to spawn a new flower.
